@@ -1,0 +1,36 @@
+<DOCTYPE! html>
+<html>
+<head>
+        <title>This is a gas app </title>
+</head>
+<body>
+<div class="columns">
+    <ul class="price">
+        <li class="header"N MAIN ST CITGO>/li>
+        <li class="gray">$ 2.67 / gallon</li>
+        <li class="grey"><a href="#" class="button">Get Gas 
+        Here</a></li>
+    </ul>
+</div>
+
+<div class="columns">
+    <ul class="price">
+        <li class="header"Mobil>/li>
+        <li class="gray">$ 2.75 / gallon</li>
+        <li class="grey"><a href="#" class="button">Get Gas 
+        Here</a></li>
+    </ul>
+</div>
+
+<div class="columns">
+    <ul class="price">
+        <li class="header"Irving oil>/li>
+        <li class="gray">$ 2.60 / gallon</li>
+        <li class="grey"><a href="#" class="button">Get Gas 
+        Here</a></li>
+    </ul>
+</div>
+
+
+</body>
+</html>
