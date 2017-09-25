@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header{
+      height: 200px;
+      background-color: green; /* light blue */
+  }
+
+  .sidebar {
+    float: left;  
+    width: 200px;
+    height: 400px;
+    background-color:blue;  
+    display: block;
+    text-align: center;
+    
+  }
+  
+  .content {
+    height: 400px;
+    background-color: #D6E9FE;   /* light blue*/
+  }
+
+  p {
+    text-indent: 50px;
+}
+  
+  .footer {
+    height: 200px;
+    background-color: lightgray; 
+    text-align: center;
+  }
