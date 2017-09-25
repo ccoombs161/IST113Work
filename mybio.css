@@ -6,7 +6,7 @@
 
   .header{
       height: 200px;
-      background-color: green; /* light blue */
+      background-color: green; 
   }
 
   .sidebar {
@@ -21,7 +21,7 @@
   
   .content {
     height: 400px;
-    background-color: #D6E9FE;   /* light blue*/
+    background-color: lightblue; 
   }
 
   p {
