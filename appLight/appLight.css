@@ -10,6 +10,7 @@
 /* Hide default HTML checkbox */
 .switch input {display:none;}
 
+
 /* The slider */
 .slider {
   position: absolute;
