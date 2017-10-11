@@ -1,14 +1,15 @@
 
-var secretNumber = 0,
-numberOfGuesses = 0;
+var secretNumber;
+var numberOfGuesses = 0;
 
 function writeMessage(elementId, message, appendMessage) {
-var elemToUpdate = document.getElementById(elementId);
-if (appendMessage) {
-    elemToUpdate.innerHTML = elemToUpdate.innerHTML + message;
-} else {
-    elemToUpdate.innerHTML = message;
-}
+	var elemToUpdate = document.getElementById('elementId');
+	secretNumber = document.getElementById('submitnum');
+	if (appendMessage) {
+		elemToUpdate.innerHTML = elemToUpdate.innerHTML + message;
+	} else {
+		elemToUpdate.innerHTML = message;
+	}
 };
 
 function newGame() {
@@ -25,6 +26,7 @@ function userGuessed() {
 var userGuessed = document.getElementById('userGuess').value;
 var gamestatus = document.getElementById('gamestatus');
 var historyList = document.getElementById('historyList');
+
 if (userGuessed.length == 0 || ! guessInRange(userGuessed)) {
     // Nothing entered or our of range.
     writeMessage('gamestatus', '<p>Please enter a number 1-10 and press the Guess button.</p>');
