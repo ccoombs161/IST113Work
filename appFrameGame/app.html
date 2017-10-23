@@ -8,9 +8,26 @@
 		<script src="app.js"></script>
 	</head>
 	<body>
+			
 		<div id="app">
 			<header>App</header>
-			<div id="main"></div>
+			<div id="main">
+				<div id="game">
+					<h1> Guessing Game</h1>
+					<div id="gamestatus">
+						<p>Enter a number between 1-10 and click the  Guess button...</p>
+					</div>
+					<input type="number" id="userGuess"/>
+					<input type="number" id="submitnum"/>
+					<div id="button" class="button">
+						Guess
+					</div>
+					<div id="history">
+						<h2>Your Previous Guesses</h2>
+						<ol id="historyList">
+						</ol>
+					</div>
+				</div>
 			<footer></footer>
 		</div>
 	</body>
