@@ -1,3 +1,0 @@
-<input type="number" id="submitnum"/>
-
-//secretNumber = document.getElementById('submitnum');
