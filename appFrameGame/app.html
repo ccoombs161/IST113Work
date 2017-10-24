@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>App</title>
 		<link href="app.css" rel="StyleSheet" />
 		<script src="lib/jquery-3.2.1.min.js"></script>
 		<script src="app.js"></script>
+		<title>App</title>
 	</head>
 	<body>
 			
@@ -13,20 +13,21 @@
 			<header>App</header>
 			<div id="main">
 				<div id="game">
-					<h1> Guessing Game</h1>
-					<div id="gamestatus">
-						<p>Enter a number between 1-10 and click the  Guess button...</p>
+					<h1>Guessing Game</h1>
+					<div id="statusArea">
+						<p>Enter a number between 1-10 and click the Guess button...</p>
 					</div>
 					<input type="number" id="userGuess"/>
-					<input type="number" id="submitnum"/>
-					<div id="button" class="button">
+					<div id="buttonArea" class="button">
 						Guess
 					</div>
-					<div id="history">
-						<h2>Your Previous Guesses</h2>
+					<div id="historyArea">
+						<h2>Previous Guesses</h2>
 						<ol id="historyList">
 						</ol>
 					</div>
+		
+				</div>
 				</div>
 			<footer></footer>
 		</div>
