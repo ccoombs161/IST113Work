@@ -63,29 +63,12 @@ function taskAtHand1cApp()
 		$moveUp.click(function() { $task.insertBefore($task.prev()); });
 		$moveDown.click(function() { $task.insertAfter($task.next()); });
 		
-		var $task = $("#task-template . task").clone();
+		var $task = $("#task-template .task").clone();
 		$("span.task-name", $task).text(taskName);
 
 		$("#task-list").append($task);
 
-		$("button.delete", $task).click(function() {
-			removeTask($task, true);
-		});
 		
-		$("button.move-up", $task).click(function() {
-			moveTask($task, true);
-		});
-		$("button.move-down", $task).click(function() {
-			moveTask($task, false);
-		});
-
-		$("span.task-name", $task).click(function() {
-			onEditTaskName($(this));
-		});
-
-		$("input.task-name", $task).change(function(){
-			onChangeTaskName($(this));
-		})
 
 	}
 	function removeTask($task)
