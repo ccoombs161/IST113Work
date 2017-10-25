@@ -58,15 +58,27 @@ function taskAtHand1cApp()
 			 .append($moveUp)
 			 .append($moveDown)
 			.append("<span class='task-name'>" + taskName + "</span>");
-		$("#task-list").append($task);
-		$delete.click(function() { $task.remove(); });
-		$moveUp.click(function() { $task.insertBefore($task.prev()); });
-		$moveDown.click(function() { $task.insertAfter($task.next()); });
-		
+	
 		var $task = $("#task-template .task").clone();
 		$("span.task-name", $task).text(taskName);
-
+		
 		$("#task-list").append($task);
+		
+		$("button.delete", $task).click(function(){
+			$task.remove();
+		});
+		
+		$("button.move-up", $task).click(function(){
+			$task.insertBefore($task.prev());
+		});
+		
+		$("button.move-down", $task).click(function(){
+			$task.insertAfter($task.next());
+		});
+		
+		$("span.task-name", $task).click(function(){
+			onEditTaskName($(this));
+		});
 
 		
 
@@ -117,6 +129,7 @@ function taskAtHand1cApp()
 		}
 		$span.show();
 	}
+	
 	
 } // end MyApp
 
