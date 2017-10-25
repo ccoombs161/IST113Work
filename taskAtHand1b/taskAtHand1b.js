@@ -79,6 +79,13 @@ function taskAtHand1bApp()
 			onEditTaskName($(this));
 		});
 
+		$("input.task-name", $task).change(function(){
+			onChangeTaskName($(this));
+		})
+		.blur(function(){
+			$(this).hide().siblings("span.task-name").show();
+		});
+
 		
 
 	}
