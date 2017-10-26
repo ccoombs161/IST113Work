@@ -65,15 +65,15 @@ function taskAtHand1cApp()
 		$("#task-list").append($task);
 		
 		$("button.delete", $task).click(function(){
-			$task.remove();
+			removeTask($task);
 		});
 		
 		$("button.move-up", $task).click(function(){
-			$task.insertBefore($task.prev());
+			moveTask($task, true);
 		});
 		
 		$("button.move-down", $task).click(function(){
-			$task.insertAfter($task.next());
+			moveTask($task, false);
 		});
 		
 		$("span.task-name", $task).click(function(){
@@ -95,9 +95,9 @@ function taskAtHand1cApp()
 		$task.remove();
 		saveTaskList();
 	}
-	function moveTask($task, moveUP)
+	function moveTask($task, moveUp)
 	{
-		if (moveUP)
+		if (moveUp)
 		{
 			$task.insertBefore($task.prev());
 		}
