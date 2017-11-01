@@ -87,10 +87,7 @@ function taskAtHand2aApp()
 			$(this).hide().siblings("span.task-name").show();
 		});
 		
-		$task.click(function() {onSelectTask($task); });
-
-		
-
+		$task.click(function() { onSelectTask($task); });
 	}
 	function removeTask($task)
 	{
