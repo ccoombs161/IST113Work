@@ -1,0 +1,43 @@
+#app {
+	position: absolute;
+	top: 2;
+	bottom: 2;
+	left: 2;
+	right: 2;
+	overflow: auto;
+	margin: 6px;
+	background-color: limegreen;
+	background: -webkit-linear-gradient(top, limegreen, #558);
+	background: -moz-linear-gradient(top, limegreen, #558);
+	background: -ms-linear-gradient(top, limegreen, #558);
+	background: linear-gradient(top, limegreen, #558);
+}
+#app>header,
+#app>footer
+{
+    background-color: black;
+}
+
+#toolbar
+{
+	padding: 0.75em;
+	font-size: 2em;
+	color: purple;
+    background-color: rgba(0, 0, 0, .75);
+    text-align: center;
+    box-shadow: 10px 10px;
+
+}
+
+#task-list .task.selected
+{
+	padding: 0.6em 0.5em;
+	border: 2px solid darkmagenta;
+	border-radius: 6px;
+    background-color: lightgreen;
+    color: white;
+    text-shadow: 4px 4px 6px #000000;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+}
