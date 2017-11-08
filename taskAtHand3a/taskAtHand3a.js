@@ -88,6 +88,10 @@ function taskAtHand3aApp()
 		});
 		
 		$task.click(function() { onSelectTask($task); });
+
+		$("button.toggle-details", $task).click(function() {
+			toggleDetails($task);
+		});
 	}
 	function removeTask($task)
 	{
@@ -166,6 +170,12 @@ function taskAtHand3aApp()
 				attr("selected", "selected");
 
 		}
+	}
+	function toggleDetails($task) 
+	{
+		$(".details", $task).slideToggle();
+		$("button.toggle-details", $task).toggleClass("expanded");
+		
 	}
 
 	
