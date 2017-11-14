@@ -62,7 +62,7 @@ function taskAtHand3bApp()
 		2000);
 	}
 
-	function addTaskElement (taskName)
+	function addTaskElement (task)
 	{
 		var $task = $("<li></li>");
 		var $delete = $("<button class='delete'>X</button>");
