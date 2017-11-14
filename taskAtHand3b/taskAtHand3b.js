@@ -3,9 +3,9 @@
 // using a function contructor form to create an object
 function taskAtHand3bApp()
 {
-	var version = "v3.2";
-	var appStorage = new AppStorage("taskAtHand3b");
-	taskList = new TaskList();
+	var version = "v3.2",
+	appStorage = new AppStorage("taskAtHand3b"),
+	taskList = new TaskList(),
 	timeoutId = 0;
 
 	// creating a private function
@@ -62,17 +62,8 @@ function taskAtHand3bApp()
 		2000);
 	}
 
-	function addTaskElement (task)
+	function addTaskElement(task)
 	{
-		var $task = $("<li></li>");
-		var $delete = $("<button class='delete'>X</button>");
-		var $moveUp = $("<button class='move-up'>^</button>");
-		var $moveDown= $("<button class='move-down'>v</button>");
-		$task.append($delete)
-			 .append($moveUp)
-			 .append($moveDown)
-			.append("<span class='task-name'>" + taskName + "</span>");
-	
 		var $task = $("#task-template .task").clone();
 		$task.data("task-id", task.id);
 		$("span.task-name", $task).text(task.name);
