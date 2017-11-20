@@ -79,7 +79,7 @@ function taskAtHand1dApp()
 		});
 
 		$("button.undo", $task).click(function(){
-			removeTask($task);
+			undoTask();
 		});
 		
 		$("span.task-name", $task).click(function(){
