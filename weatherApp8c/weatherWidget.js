@@ -8,17 +8,28 @@ function WeatherWidget($widget)
         getWeatherReport();
     };
 
-    function getWeatherReport()
+    function getWeatherReport(lat, lon)
     {
-        $.getJSON("data/weather.json", {
-            t: new Date().getTime()
-        })
+        var coords = lat + "," + lon;
+		$.ajax({
+			url: "https://api.weather.gov" + "/conditions/q/" + coords + ".json",
+			datatype : "jsonp"
+		})
         .done(function(data) { populateWeather(data); })
         .fail(function(jqXHR, textStatus, errorThrown) {
         showError(errorThrown);
         });
     }
-
+	function getCurrentWeather()
+	{
+		var lat = $("#latitude").val();
+		var lon = $("#longitude").val();
+		if (lat && lon)
+		{
+			$("#weather-widget").fadeIn();
+			weatherWidget.update(lat, lon);
+		}
+	}
     function populateWeather(data) 
     {
         var $observation = data.current_observation;
@@ -35,6 +46,10 @@ function WeatherWidget($widget)
             $(this).text(observation[field]);
 
         });
+		
+		// Comply with the terms of service 
+		$(".results footer img", $widget)
+			.attr("src", observation.image.url);
 
         $(".loading", $widget).fadeOut(function () 
         {
