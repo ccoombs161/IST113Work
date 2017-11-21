@@ -1,10 +1,5 @@
 function WeatherWidget($widget)
 {
-    this.start = function()
-    {
-       var forecast = new getWeatherReport();
-       var weatherwidget = $("#weather-widget");
-    };
 
     this.update = function()
     {
@@ -15,13 +10,13 @@ function WeatherWidget($widget)
 
     function getWeatherReport()
     {
-        $.get("data/weather.json", {
+        $.getJSON("data/weather.json", {
             t: new Date().getTime()
         })
-             .done(function(data) { populateWeather(data);})
-             .fail(function(jqXHR, textStatus, errorThrown) {
-                 showError(errorThrown);
-             });
+        .done(function(data) { populateWeather(data); })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+        showError(errorThrown);
+        });
     }
 
     function populateWeather(data) 
@@ -65,4 +60,9 @@ function WeatherWidget($widget)
             });
         }
     }
+	
+	function showError()
+	{
+		return;
+	}
 }
