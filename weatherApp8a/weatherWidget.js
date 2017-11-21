@@ -1,11 +1,6 @@
 function WeatherWidget($widget)
 {
-    this.start = function()
-    {
-       var forecast = new getWeatherReport();
-       var weatherwidget = $("#weather-widget");
-    };
-
+    
     this.update = function()
     {
         $(".results", $widget).hide();
