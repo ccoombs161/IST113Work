@@ -21,8 +21,8 @@ function WeatherWidget($widget)
 
     function populateWeather(data) 
     {
-        var $observation = data.current_observation;
-
+        var observation = data.current_observation; /* $observation  */
+       
         $(".results header img", $widget)
             .attr("src", observation.icon_url);
         $(".location>span", $widget)
@@ -36,7 +36,7 @@ function WeatherWidget($widget)
 
         });
 
-        $(".loading", $widget).fadeOut(function () 
+        $(".loading", $widget).fadeOut(function() 
         {
             $(".results", $widget).fadeIn();
         });
