@@ -11,13 +11,20 @@ function MyApp()
 		$("#app>footer").text(message);
 	}
 
-	// creating a public function
 	this.start = function()
-	{
+    {
 		$("#app>header").append(version);
 		setStatus("ready");
-	};
+		var $weatherWidgetDiv = $("#weather-widget");
+       WeatherWidget = new WeatherWidget($weatherWidgetDiv);
+       
+	    $("#getWeather").click(function() {
+			WeatherWidget.update();
+		});
+	   
+    };
 } // end MyApp
+
 
 $(function() {
 	window.app = new MyApp();

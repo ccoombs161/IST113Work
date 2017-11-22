@@ -1,5 +1,5 @@
 <weather>
-<location>Your City</location>
+<location>Concord</location>
 <current_observation>
 <weather>Snow</weather>
 <temperature_string>38.3 F (3.5 C)</temperature_string>
