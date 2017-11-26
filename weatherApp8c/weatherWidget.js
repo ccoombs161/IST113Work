@@ -12,7 +12,8 @@ function WeatherWidget($widget)
     {
         var coords = lat + "," + lon;
         $.ajax({
-            url: "https://api.weather.gov/points/43.22,-71.53/forecast" + 
+            url: "https://api.weather.gov/points/43.22,-71.53/forecast" + "https://api.weather.gov/points/43.22,-71.53" +
+            "https://api.weather.gov/points/43.22,-71.53/forecast"+
                 "/conditions/q/" + coords + ".json", 
             dataType : "json"
         })
@@ -32,7 +33,7 @@ function WeatherWidget($widget)
 
     function populateWeather(data) 
     {
-        var $observation = data.current_observation; /* $observation  */
+        var $observation = data.current_observation; /* $observation ? */
        
         $(".results header img", $widget)
             .attr("src", observation.icon_url);
