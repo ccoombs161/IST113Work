@@ -5,16 +5,16 @@ function WeatherWidget($widget)
     {
         $(".results", $widget).hide();
         $(".loading", $widget).show();
-        getWeatherReport();
+		getLocation();
+		getCurrentWeather();
+       
     };
 
     function getWeatherReport(lat, lon)
     {
         var coords = lat + "," + lon;
         $.ajax({
-            url: "https://api.weather.gov/points/43.22,-71.53/forecast" + "https://api.weather.gov/points/43.22,-71.53" +
-            "https://api.weather.gov/points/43.22,-71.53/forecast"+
-                "/conditions/q/" + coords + ".json", 
+            url: "https://api.weather.gov/points/"+coords+"/forecast" , 
             dataType : "json"
         })
         .done(function(data) { populateWeather(data); })
@@ -22,23 +22,16 @@ function WeatherWidget($widget)
         showError(errorThrown);
         });
 
-        var lat = $("#latitude").val();
-        var lon = $("#longitude").val();
-        if (lat && lon)
-        {
-            $("#weather-widget").fadeIn();
-            weatherWidget.update(lat, lon);
-        }
+        
     }
 
     function populateWeather(data) 
     {
-        var $observation = data.current_observation; /* $observation ? */
+        var observation = data.properties.periods[0];
        
         $(".results header img", $widget)
-            .attr("src", observation.icon_url);
-        $(".location>span", $widget)
-            .text(observation.display_location.full);
+            .attr("src", observation.icon);
+        
         
         $(".conditions>span").each(function(i, e)
         {
@@ -72,12 +65,23 @@ function WeatherWidget($widget)
             });
         }
 
-        var loc = position.coords.latitude + "," + 
-        position.coords.longitude;
+        
     }
 	
-	function showError()
+	function getCurrentWeather()
 	{
-		return;
+		var lat = $("#latitude").val();
+        var lon = $("#longitude").val();
+        if (lat && lon)
+        {
+            $("#weather-widget").fadeIn();
+            getWeatherReport(lat,lon);
+        }
 	}
+	
+	function showError(error)
+	{
+		$(".error").text(error);
+	}
+	
 }
