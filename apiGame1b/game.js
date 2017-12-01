@@ -12,27 +12,45 @@ function JeopardyGame()
         showError(errorThrown);
 		console.log("error");
         });
-    }
-
+	}
+	
 	function contestant()
 	{
 		$("#getQuestion").click(function() {
 			getQuestion();
 		});
 	}
+
+	function newGame()
+	{
+		$("#Restart").click(function() {
+			newGame();
+			window.JeopardyGame.start();
+		});
+	}
+	
+	function getAnswer() 
+	{
+		$("#getAnswer").click(function() {
+			getAnswer();
+		});
+	}
+	
     function QuestionArea(data) 
     {
        var jData = data[0];
 	   $(".question>span").text(jData.question);
 	   $(".answer>span").text(jData.answer);
 	   $(".category>span").text(jData.category.title);
+	   $(".value>span").text(jData.value);
+
 	   
     }
 
 	function showError(error)
 	{
 		$(".error").text(error);
-		alert("wow theres a failed ajax call");
+		alert("Error: Please reload the page");
 	}
 	
 	this.start = function()
@@ -47,3 +65,9 @@ $(function() {
 		window.JeopardyGame = new JeopardyGame();
 		window.JeopardyGame.start();
 	});
+
+	/* Create Score area/ System
+	   Restart button
+	   Make buttons WORK
+	   Create Game board 
+	*/
