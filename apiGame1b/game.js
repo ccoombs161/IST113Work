@@ -14,6 +14,7 @@ function JeopardyGame()
         });
 	}
 	
+
 	function contestant()
 	{
 		$("#getQuestion").click(function() {
@@ -21,6 +22,13 @@ function JeopardyGame()
 		});
 	}
 
+	function answer() 
+	{
+		$("#getAnswer").click(function() {
+			answer();
+		});
+	}
+	
 	function newGame()
 	{
 		$("#Restart").click(function() {
@@ -29,12 +37,6 @@ function JeopardyGame()
 		});
 	}
 	
-	function getAnswer() 
-	{
-		$("#getAnswer").click(function() {
-			getAnswer();
-		});
-	}
 	
     function QuestionArea(data) 
     {
@@ -43,8 +45,7 @@ function JeopardyGame()
 	   $(".answer>span").text(jData.answer);
 	   $(".category>span").text(jData.category.title);
 	   $(".value>span").text(jData.value);
-
-	   
+ 
     }
 
 	function showError(error)
@@ -56,6 +57,9 @@ function JeopardyGame()
 	this.start = function()
     {
 	   contestant(); 
+	   answer();
+	   newGame();
+	   
     };
 	
 	
