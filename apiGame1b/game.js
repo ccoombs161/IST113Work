@@ -1,6 +1,7 @@
 "use strict";
 function JeopardyGame()
 {
+	var score = 0;
     function getQuestion()
     {
         $.ajax({
@@ -14,7 +15,6 @@ function JeopardyGame()
         });
 	}
 	
-
 	function contestant()
 	{
 		$("#getQuestion").click(function() {
@@ -37,7 +37,6 @@ function JeopardyGame()
 		});
 	}
 	
-	
     function QuestionArea(data) 
     {
        var jData = data[0];
@@ -47,6 +46,18 @@ function JeopardyGame()
 	   $(".value>span").text(jData.value);
  
     }
+
+	function score()
+	{
+		if(document.getElementById('value').click == true)
+		{
+			document.getElementById('score') = score + value;
+		}
+		else if(document.getElementById('value').click == false)
+		{
+			document.getElementById('score') = score - value;
+		}
+	};
 
 	function showError(error)
 	{
@@ -61,8 +72,7 @@ function JeopardyGame()
 	   newGame();
 	   
     };
-	
-	
+		
 }
 
 $(function() {
@@ -71,7 +81,5 @@ $(function() {
 	});
 
 	/* Create Score area/ System
-	   Restart button
 	   Make buttons WORK
-	   Create Game board 
 	*/

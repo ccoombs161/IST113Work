@@ -14,9 +14,7 @@ div
 }
 button
 {
-    cursor: pointer;
-    
-	
+    cursor: pointer;	
 }
 .hide
 {
@@ -65,7 +63,8 @@ button
     background: linear-gradient(top, blue, #223);
 	margin: 0 auto;
     text-align: center;
-    
+    border: 10px solid gold;
+    border-radius: 20px;  
 }
 
 #game button
