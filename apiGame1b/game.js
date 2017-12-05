@@ -12,7 +12,8 @@ function JeopardyGame()
         .fail(function(jqXHR, textStatus, errorThrown) {
         showError(errorThrown);
 		console.log("error");
-        });
+		});
+		
 	}
 	
 	function contestant()
@@ -79,7 +80,3 @@ $(function() {
 		window.JeopardyGame = new JeopardyGame();
 		window.JeopardyGame.start();
 	});
-
-	/* Create Score area/ System
-	   Make buttons WORK
-	*/
